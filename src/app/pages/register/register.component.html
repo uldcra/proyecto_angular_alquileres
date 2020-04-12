@@ -1,0 +1,27 @@
+<div class="alquiles-login">
+  <div class="container" style="margin-top: 100px;">
+    <div class="wrapper fadeInDown">
+          <div id="formContent">
+  
+            <!-- Login Form -->
+            
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <h3>Sign In</h3>
+             
+              <input type="text" id="username" class="fadeIn second" name="username" formControlName="name" placeholder="Username">
+              <input type="text" id="email" class="fadeIn second" name="email" formControlName="email" placeholder="email">
+              <input type="password" id="password" class="fadeIn third psswdInput password-alquileres" name="password" formControlName="password" placeholder="Password" >
+      
+           <input type="submit" class="fadeIn fourth" value="Register">
+           
+            </form>
+  
+  
+           
+           
+            
+        
+          </div>
+        </div>
+  </div>
+</div>

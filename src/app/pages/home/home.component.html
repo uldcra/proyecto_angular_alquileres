@@ -1,0 +1,131 @@
+<div style="margin-top: 100px;" >
+
+<div class=" hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('assets/static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+  <div class="row">
+  <div class="offset-lg-2 col-lg-8  col-md-12">
+    <div class="text text-center content-center" id = "containerPresentation">
+      <h1 class="mb-4">Encuentra ya <br>tu próxima propiedad</h1>
+      <p style="font-size: 18px;">Introduce la zona deseada y disfruta de nuestro catálogo de viviendas</p>
+      <form  class="search-location mt-md-5">
+        <div class="row justify-content-center search-form">
+          <div class="col-lg-12 align-items-end">
+            <div class="form-group">
+              <div class="form-field">
+              <div class="row">
+              <a class="filter">Busqueda de:</a>
+                <select name= "searchType" class="selectInput"> 
+                  <option value="Alquiler">Alquiler</option>
+                  <option value="Venta">Venta</option>
+                </select>
+                <a class="filter">Tipo de propiedad:</a>
+                <select name= "propertyType" class="selectInput"> 
+                  <option value="Casa">Casa</option>
+                  <option value="Piso">Piso</option>
+                  <option value="Local">Local</option>
+                </select>
+                <label class="filter">Metros Cuadrados:</label>
+                <input name= "squareMeters" value="25" class="numberInput" type="number" min="10" max="250">
+              </div>
+                <div class="row">
+                <a class="filter"> Número de habitaciones:</a>
+                <select name = "rooms" class="selectInput" > 
+                  <option value="1">1 o Más</option>
+                  <option value="2">2 o Más</option>
+                  <option value="3">3 o Más</option>
+                </select>
+                <a class="filter"> Número de baÃ±os:</a>
+
+                <select name="bathrooms" class="selectInput"> 
+                  <option value="1">1 o Más</option>
+                  <option value="2">2 o Más</option>
+                  <option value="3">3 o Más</option>
+                </select>
+              
+                <label class="filter" >Precio:</label>
+                <input class="numberInput" value="1000"  name= "price" type="number" max="5000000">
+                
+              </div>
+                <input type="text" name = "location" class="form-control search" placeholder="Introduce una zona">
+                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center justify-content-center">
+      <div class="text text-center content-center" id = "containerPresentation">
+        <h1 class="mb-4">Encuentra ya <br>tu próxima propiedad</h1>
+        <p style="font-size: 18px;">Introduce la zona deseada y disfruta de nuestro catálogo de viviendas</p>
+        <form method="GET" action="search" class="search-location mt-md-5">
+          <div class="row justify-content-center search-form">
+            <div class="col-lg-12 align-items-end">
+              <div class="form-group">
+                <div class="form-field">
+                <div class="row">
+                <a class="filter">Busqueda de:</a>
+                  <select name= "searchType" class="selectInput"> 
+                    <option value="Alquiler">Alquiler</option>
+                    <option value="Venta">Venta</option>
+                  </select>
+                  <a class="filter">Tipo de propiedad:</a>
+                  <select name= "propertyType" class="selectInput"> 
+                    <option value="Casa">Casa</option>
+                    <option value="Piso">Piso</option>
+                    <option value="Local">Local</option>
+                  </select>
+                  <label class="filter">Metros Cuadrados:</label>
+                  <input name= "squareMeters" value="25" class="numberInput" type="number" min="10" max="250">
+                </div>
+                  <div class="row">
+                  <a class="filter"> Número de habitaciones:</a>
+                  <select name = "rooms" class="selectInput" > 
+                    <option value="1">1 o Más</option>
+                    <option value="2">2 o Más</option>
+                    <option value="3">3 o Más</option>
+                  </select>
+                  <a class="filter"> Número de baÃ±os:</a>
+
+                  <select name="bathrooms" class="selectInput"> 
+                    <option value="1">1 o Más</option>
+                    <option value="2">2 o Más</option>
+                    <option value="3">3 o Más</option>
+                  </select>
+                
+                  <label class="filter" >Precio:</label>
+                  <input class="numberInput" value="1000"  name= "price" type="number" max="5000000">
+                  
+                </div>
+                  <input type="text" name = "location" class="form-control search" placeholder="Introduce una zona">
+                  <button type="submit"><span class="ion-ios-search"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+
+ 
+</div>
+
+
+
+<div class="container" *ngIf="showRecommend" style="padding-top: 50px;"> 
+  <!-- <canvas id="myChart" width="800" height="600"></canvas> -->
+
+
+
+<app-recomendaciones
+[items]="items"
+[showDelete] = "showDelete"
+[showFavo] = "showFavo"
+>
+</app-recomendaciones> 
+</div>
+

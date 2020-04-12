@@ -1,0 +1,49 @@
+<!-- <h1>El blog de los mejores</h1> -->
+
+<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('assets/bg_1.jpg');"
+  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+      <div class="col-md-9 pb-5 text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i
+                class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i class="ion-ios-arrow-forward"></i></span>
+        </p>
+        <h1 class="mb-3 bread">Nuestro Blog</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ftco-section">
+  <div *ngFor="let blog of blogs">
+
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-md-3 d-flex ">
+          <div class="blog-entry justify-content-end">
+            <div class="text">
+              <h3 class="heading"><a href="#">{{blog.title}}
+                </a></h3>
+              <div class="meta mb-3">
+                <div><a>July. 24, 2019</a></div>
+                <div><a>Diana</a></div>
+              </div>
+              <a class="block-20 img" style="background-image: url('assets/image_1.jpg');"></a>
+              <p>{{blog.text}}</p>
+              <div id="blogMethods">
+                <a class="btn d-flex align-items-center btn-custom-edit" id="deleteMethod" style="float:left;">
+                  <span class="icon-trash"></span>
+                </a>
+                <a class="d-flex align-items-center btn-custom-edit2" id="updateMethod">
+                  <span class="icon-edit" style="top: 5px;"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- {{/blogs}} -->

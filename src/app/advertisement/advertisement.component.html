@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>
+        <div layout="row" layout-align="start center">
+            <span flex>Advertisements</span>
+        </div>
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+        <div>
+            <mat-nav-list *ngIf="loginService.isLogged">
+                <a *ngFor="let advertisement of advertisements" mat-list-item [routerLink]="['/AllProperties', advertisement.id]">
+                    {{ advertisement.type }}
+                </a>
+            </mat-nav-list>
+
+            <mat-nav-list *ngIf="!loginService.isLogged">
+                <mat-list-item [ngStyle]="{ cursor: 'auto' }" *ngFor="let advertisement of advertisements">
+                    {{ advertisement.type }}
+                </mat-list-item>
+            </mat-nav-list>
+        </div>
+
+        <div layout="column" layout-align="center end" *ngIf="loginService.isLogged && loginService.isAdmin">
+            <mat-divider inset="true"></mat-divider>
+            <button mat-raised-button color="accent" class="push-top-sm" *ngIf="loginService.isLogged" (click)="newAdvertisement()">
+                <mat-icon>add</mat-icon> New
+            </button>
+        </div>
+    </mat-card-content>
+</mat-card>
+

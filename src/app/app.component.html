@@ -1,0 +1,30 @@
+<td-layout [mode]="(media.registerQuery('gt-sm') | async) ? 'side' : 'push'" [sidenavWidth]="(media.registerQuery('gt-xs') | async) ? '240px' : '100%'">
+
+    <!-- <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <span>Ruvik</span>
+            <span class="example-spacer"></span>
+            <login></login>
+        </mat-toolbar-row>
+    </mat-toolbar> -->
+
+    <myHeader>
+
+    </myHeader>
+
+    <!-- <div flex layout-gt-sm="row" tdMediaToggle="gt-xs" layout-wrap [mediaClasses]="['push-sm']">
+
+        <div flex-gt-sm="100">
+            <router-outlet></router-outlet>
+        </div>
+    </div> -->
+
+    <router-outlet></router-outlet>
+
+    <!-- <td-layout-footer>
+        <div layout="row" layout-align="start center">
+            <span class="mat-caption">Made with <mat-icon class="text-md">favorite</mat-icon> in CodeURJC Software
+                    Lab ({{mode}})</span>
+        </div>
+    </td-layout-footer> -->
+</td-layout>

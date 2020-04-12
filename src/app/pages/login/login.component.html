@@ -1,0 +1,95 @@
+
+<!--
+<ng-container *ngIf="!loginService.isLogged">
+	<span>
+		<button mat-button (click)='openLoginDialog()'>
+			Login
+		</button>
+	</span>
+</ng-container>
+
+<ng-container *ngIf="loginService.isLogged">
+	<span>
+		{{loginService.user.name}}
+	</span>
+	<span>
+		<button mat-button (click)='logOut()'>
+			Logout
+		</button>
+	</span>
+</ng-container>
+
+
+<ng-template #loginDialog let-dialogRef="dialogRef">
+
+	<div layout="column" layout-fill>
+		<h2 mat-dialog-title>
+			Login
+		</h2>
+		<mat-dialog-content flex>
+			<form #loginForm="ngForm">
+				<div layout="row">
+					<mat-form-field flex>
+						<input matInput #userElement placeholder="Username" type="text"
+							maxlength="30" name="username" required>
+						<span matPrefix>
+							<mat-icon>person</mat-icon>
+						</span>
+						<mat-hint align="end">{{userElement.value.length}} / 30</mat-hint>
+					</mat-form-field>
+				</div>
+				<div layout="row">
+					<mat-form-field flex>
+						<input matInput #passElement placeholder="Password" type="password"
+							name="password" required>
+						<span matPrefix>
+							<mat-icon>lock</mat-icon>
+						</span>
+						<mat-hint align="end">Something hard to guess</mat-hint>
+					</mat-form-field>
+				</div>
+			</form>
+		</mat-dialog-content>
+		<mat-divider></mat-divider>
+		<mat-dialog-actions align="end">
+			<button type="button" mat-button class="text-upper" (click)="dialogRef.close()">Close</button>
+			<button type="button" mat-button color="accent" class="text-upper" (click)="logIn($event, userElement.value, passElement.value)">Login</button>
+		</mat-dialog-actions>
+	</div>
+
+</ng-template> -->
+
+<div class="alquiles-login">
+  <div class="container" style="margin-top: 100px;">
+    <div class="wrapper fadeInDown">
+          <div id="formContent">
+  
+            <!-- Login Form -->
+            <div *ngIf="!logueado">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <h3>Sign In</h3>
+             
+              <input type="text" id="username" class="fadeIn second" name="username" formControlName="name" placeholder="Username">
+              <input type="password" id="password" class="fadeIn third psswdInput password-alquileres" name="password" formControlName="password" placeholder="Password" >
+
+           <input type="submit" class="fadeIn fourth" value="Log In">
+           
+            </form>
+            </div>
+  
+            <div *ngIf="logueado">
+              <input type="button" value="Sign Out"  (click)="logOut()">
+              
+            </div> 
+            <!-- Sign Up -->
+            <div id="formFooter">
+              
+              <a class="underlineHover" [routerLink]="['/register']">Registrarse</a>
+            </div>
+              
+            <a [routerLink]="['/home']"><input type="button" value="Home"></a>
+        
+          </div>
+        </div>
+  </div>
+</div>
