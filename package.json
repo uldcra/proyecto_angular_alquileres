@@ -4,9 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "iniciar": "./node_modules/.bin/ng serve -o --proxy-config proxy.conf.json",
-    "alq": "ng serve -o --port 4404",
     "build": "ng build --base-href /new/ --prod",
+    "mybuild": "ng build   --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

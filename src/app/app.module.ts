@@ -71,6 +71,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RecomendacionesComponent } from './components/recomendaciones/recomendaciones.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
+import { blogSingleComponent } from './blog-single.component';
 
 @NgModule({
   imports: [
@@ -132,6 +133,7 @@ import { FavoritosComponent } from './pages/favoritos/favoritos.component';
     LoginComponent,
     HeaderComponent,
     blogListComponent,
+    blogSingleComponent,
     HomeComponent,
     RecomendacionesComponent,
     RegisterComponent,

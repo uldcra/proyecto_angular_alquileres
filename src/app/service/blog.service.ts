@@ -27,17 +27,17 @@ export class BlogService{
     }
 
     
-
-    getBlog(id: number | string) {
-        return this.http.get(GET_BLOG + id , { withCredentials: true })
+/* , { withCredentials: true } */
+    getBlog(id: number | string): Observable<Blog> {
+        return this.http.get<Blog>(GET_BLOG + id )
             .pipe(
                 map(response => response),
                 catchError(error => this.handleError(error))
             );
     }
-
+/* , { withCredentials: true } */
     getBlogs(page: number, quantity: number): Observable<Blog[]> {
-        return this.http.get<Blog[]>(GET_BLOGS + "?page="+page+"&number="+quantity, { withCredentials: true })
+        return this.http.get<Blog[]>(GET_BLOGS + "?page="+page+"&number="+quantity)
         .pipe(map(response => response),
         catchError((error) => this.handleError(error)));
     }

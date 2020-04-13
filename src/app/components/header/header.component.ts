@@ -92,7 +92,7 @@ export class HeaderComponent implements OnInit{
           {label: 'Poner anuncio' , ruta: 'blog'},
           {label: 'Mis favoritos' , ruta: 'favoritos/' + id},
           {label: 'Mis anuncios' , ruta: 'Mis anuncios'},
-          {label: 'Blog' , ruta: 'favoritos/' + id },
+          {label: 'Blog' , ruta: 'blog'},
           {label: this.email || 'Logout' , ruta: 'login'
         },
           
