@@ -10059,8 +10059,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     height: 40px;
     background: #f75757;
     border-radius: 0 50% 0 0;
-}  
-.titulo{
-  min-height: 100px; 
-  max-height: 100px;
-}
+  }  
+  .titulo{
+    min-height: 100px; 
+    max-height: 100px;
+  } 

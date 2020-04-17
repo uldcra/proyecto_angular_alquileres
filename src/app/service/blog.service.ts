@@ -10,7 +10,8 @@ const BASE_URL= "https://localhost:8443/api";
 const GET_BLOG = BASE_URL + "/blogs/";
 const GET_BLOGS = BASE_URL + "/blogs";
 const DELETE_BLOG = BASE_URL + "/blogs/";
-const CREATE_BLOG = BASE_URL + "/concept/";
+const CREATE_BLOG = BASE_URL + "/blogs";
+const UPDATE_BLOG = BASE_URL + "/blogs/";
 
 
 
@@ -35,25 +36,43 @@ export class BlogService{
                 catchError(error => this.handleError(error))
             );
     }
-/* , { withCredentials: true } */
+
+    /* , { withCredentials: true } */
     getBlogs(page: number, quantity: number): Observable<Blog[]> {
         return this.http.get<Blog[]>(GET_BLOGS + "?page="+page+"&number="+quantity)
         .pipe(map(response => response),
         catchError((error) => this.handleError(error)));
     }
 
-    addBlog(blog: Blog, id:number):Observable<Blog> {
+    addBlog(blog: Blog):Observable<HttpEvent<{}>> {
         const body = JSON.stringify(blog);
+        let formData = new FormData();
+        formData.append("multipartFile", blog.getImages());
+        formData.append("title", blog.getTitle());
+        formData.append("description", blog.getText());
+        // const headers = new HttpHeaders({
+        //     'Content-Type': 'application/json',
+        // });
 
+            const req = new HttpRequest('POST', CREATE_BLOG, formData, {
+                reportProgress: true
+                });
+                
+                return this.http.request(req);
+
+    }
+
+
+    editBlog(blog: Blog,id:number): Observable<Blog> {
+
+        const body = JSON.stringify(blog);
+        
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
         });
-        return this.http.post<Blog>(CREATE_BLOG + id, body, {headers})
-            .pipe(
-                map(response => response),
-                catchError(error => this.handleError(error))
-            );
-
+            return this.http
+                .put<Blog>(UPDATE_BLOG + id, body, { headers })
+                .pipe(catchError((error) => this.handleError(error)));
     }
 
     deleteBlog(id:number){
@@ -62,4 +81,16 @@ export class BlogService{
                 catchError(err => this.handleError(err))
             );
     }
+
+    uploadFile(file:File): Observable<HttpEvent<{}>>{
+        let formData = new FormData();
+        formData.append("file", file);
+
+        const req = new HttpRequest('POST', BASE_URL+"/main/new-image", formData, {
+        reportProgress: true
+        });
+        
+        return this.http.request(req);
+    }
+    
 }

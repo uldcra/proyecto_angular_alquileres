@@ -34,11 +34,11 @@
               <a class="block-20 img" style="background-image: url('assets/image_1.jpg');"></a>
               <p>{{blog.text}}</p>
               <div id="blogMethods">
-                <a class="btn d-flex align-items-center btn-custom-edit" id="deleteMethod" style="float:left;">
-                  <span class="icon-trash"></span>
+                <a *ngIf="canDelete" class="btn d-flex align-items-center btn-custom-edit" id="deleteMethod" style="float:left;" (click)="deleteBlog(blog.id)">
+                  <span class="icon-trash" ></span>
                 </a>
-                <a class="d-flex align-items-center btn-custom-edit2" id="updateMethod">
-                  <span class="icon-edit" style="top: 5px;"></span>
+                <a *ngIf="canDelete"class="d-flex align-items-center btn-custom-edit2" id="updateMethod" [routerLink]="['/new-blog',blog.id]">
+                  <span class="icon-edit" style="top: 5px;" ></span>
                 </a>
               </div>
             </div>

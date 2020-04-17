@@ -1,0 +1,125 @@
+<!--<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('assets/bg_1.jpg');"
+  data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>-->
+  
+<!--<ng-template #addConceptDialog let-dialogRef="dialogRef">
+    <div layout="column" layout-fill>
+        <h2 mat-dialog-title>
+            Nuevo anuncio
+        </h2>-->
+        <!--<mat-dialog-content flex>-->
+                <!--<div class="register-item">-->
+                    <!--<form #myform="ngForm" class="form form-register">-->
+                      
+                      <body class="myBody">
+                        <div class="myContainer">
+                        
+                            <div class=" align-middle justify-content-center" id="content">
+                                <h2 class="text-center witt" id="submitAdvertisementButton">PUBLICAR ANUNCIO <br></h2>
+                                <br>
+                                <form action="/property-upload" method="post" enctype="multipart/form-data">
+                        
+                                    <h3 class="botonDesp1">Tipo de anuncio:</h3>
+                                    <mat-form-field>
+                                      <mat-label>Tipo de anuncio:</mat-label>
+                                      <mat-select [(ngModel)]="advertisement.type" name="tipo">
+                                        <mat-option *ngFor="let type of typeSelect" [value]="type">
+                                          {{type}}
+                                        </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                                    <h3 class="botonDesp1">Tipo de vivienda:</h3>
+                                    <mat-form-field>
+                                      <mat-label>Tipo de vivienda:</mat-label>
+                                      <mat-select [(ngModel)]="advertisement.property" name="propiedad">
+                                        <mat-option *ngFor="let property of propertySelect" [value]="property">
+                                          {{property}}
+                                        </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                                    <h3 class="botonDesp1">Nº de habitaciones:</h3>
+                                    <mat-form-field>
+                                      <mat-label>Nº de habitaciones:</mat-label>
+                                      <mat-select [(ngModel)]="advertisement.rooms" name="habitaciones">
+                                        <mat-option *ngFor="let rooms of roomsSelect" [value]="rooms">
+                                          {{rooms}}
+                                        </mat-option>
+                                      </mat-select>
+                                  </mat-form-field>
+                                  <h3 class="botonDesp1">Nº de Baños:</h3>
+                                  <mat-form-field>
+                                    <mat-label>Nº de baños:</mat-label>
+                                    <mat-select [(ngModel)]="advertisement.bathrooms" name="baños">
+                                      <mat-option *ngFor="let bathrooms of bathroomsSelect" [value]="bathrooms">
+                                        {{bathrooms}}
+                                      </mat-option>
+                                    </mat-select>
+                                  </mat-form-field>
+
+                                    <h3 class="botonDesp1">Metros cuadrados:</h3>
+                        
+                                    <mat-form-field>
+                                      <input
+                                              matInput
+                                              [(ngModel)]="advertisement.squareMeters"
+                                              placeholder="Metros cuadrados:"
+                                              name="name"
+                                              max='800'
+                                              required
+                                      />
+                                  </mat-form-field>
+
+                                    <h3 class="botonDesp1">Introduzca la Localidad:</h3>
+                                    <mat-form-field>
+                                      <input
+                                    matInput
+                                    [(ngModel)]="advertisement.location"
+                                    placeholder="Introduzca la Localidad:"
+                                    name="name"
+                                    required
+                                      />
+                                    </mat-form-field>
+                                    
+                                    <h3 class="botonDesp1">Introduzca el precio del anuncio:</h3>
+                                    <mat-form-field>
+                                      <input
+                                              matInput
+                                              [(ngModel)]="advertisement.price"
+                                              placeholder="Introduzca el precio del anuncio:"
+                                              name="name"
+                                              min="0" 
+                                              max="2000000" 
+                                              required
+                                      />
+                                  </mat-form-field>
+                                    <h3 class="botonDesp1">Introduzca la dirección:</h3>
+                                    <mat-form-field>
+                                      <input
+                                              matInput
+                                              [(ngModel)]="advertisement.address"
+                                              placeholder="Introduzca la dirección:"
+                                              name="name"
+                                              required
+                                      />
+                                    </mat-form-field>
+                                    
+                                    <!-- <input type="submit" value="subir anuncio" class="btn btn-primary py-3 px-5"> -->
+                                </form>
+                                <label for="file">Select image:</label>
+                                    <input required type="file" id="file" name="file" multiple>
+                                    <input type="submit" (click)="addAdvertisement()" >
+                            </div>
+                        </div>
+                        </body>
+        <!--</mat-dialog-content flex>-->
+        <!--<mat-divider></mat-divider>-->
+        <!--<mat-dialog-actions align="end">-->
+            <!--<button type="button" mat-button class="text-upper" (click)="dialogRef.close()">Cerrar</button>
+            <button type="button" mat-button color="accent" class="text-upper"
+                    (click)="addAdvertisement()">Guardar
+            </button>-->
+        <!--</mat-dialog-actions>-->
+   <!-- </div>
+</ng-template>-->
+
+<!--</section>-->

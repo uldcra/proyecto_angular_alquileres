@@ -1,0 +1,30 @@
+<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('assets/bg_1.jpg');"
+data-stellar-background-ratio="0.5">
+  <div class="myContainer">
+    <div class="col-md-8 mb-md-5 d-flex align-middle justify-content-center" id="content">
+        <h2 id="titleBlogUpload" class="text-center witt">PUBLICAR BLOG <br></h2>
+        <br>
+        <form action="/blog-upload" method="post" enctype="multipart/form-data">
+        <h3 class="botonDesp2">Título:</h3><br><br><br>
+        <input required="" *ngIf="isNew" [(ngModel)]="title" name="title" type="text" id="location" onkeydown="event.stopPropagation()">
+        <input required="" *ngIf="!isNew" value="{{blog.title}}" #titleInput name="title" type="text" id="location" onkeydown="event.stopPropagation()">
+        
+        <br>
+        <h3 class="botonDesp3">Descripción:</h3><br><br><br>
+        <div class="form-group shadow-textarea"style="padding-top: 20px;" >
+            <textarea *ngIf="isNew" class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3"
+            placeholder="Introduce una descripción..." name="description" [(ngModel)]="description" onkeydown="event.stopPropagation()"></textarea>
+            <textarea *ngIf="!isNew" value="{{blog.text}}" class="form-control z-depth-1" id="txtarea" rows="3"
+            name="description" #descriptionInput onkeydown="event.stopPropagation()"></textarea>
+        </div>
+        <label for="file">Select image:</label>
+        <input required="" type="file" id="file" name="file" multiple="" [(ngModel)]="images">
+        <input type="button" *ngIf="isNew" value="Enviar" (click)="createBlog($event.toElement.form.elements.file.files[0].name)">
+        <input type="button" *ngIf="!isNew" value="Enviar" (click)="updateBlog($event.toElement.form.elements.file.files[0].name)">
+        
+        <!-- <input type="submit" value="subir anuncio" class="btn btn-primary py-3 px-5"> -->
+        <!-- <input type="hidden" name="_csrf" value="a42423df-4fce-4432-abe7-70d04b202898"> -->
+        </form>
+    </div>
+  </div>
+</section>

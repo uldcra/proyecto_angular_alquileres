@@ -10,6 +10,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 import { blogSingleComponent } from './blog-single.component';
 import { AuthUserService } from './service/auth/auth.user.service';
+import { PropertyUploadComponent } from './property-upload/propertyUpload.component';
+import { blogUploadComponent } from './blog-upload.component';
 //import { PropertyUploadComponent } from './property-upload/propertyUpload.component';
 
 
@@ -26,9 +28,12 @@ const appRoutes = [
   // { path: '', redirectTo: 'advertisement', pathMatch: 'full' },
   { path: 'blog', component: blogListComponent },
   { path: 'blog/:id', component: blogSingleComponent},
+  { path: 'new-blog', component: blogUploadComponent},
+  { path: 'new-blog/:id', component: blogUploadComponent},
   { path: '', pathMatch:'full' ,redirectTo: 'home'},
+
   //{ path: 'blog/:id', component: blogSingleComponent},
-  //{ path: 'propertyUpload', component: PropertyUploadComponent}
+  { path: 'propertyUpload', component: PropertyUploadComponent}
  
 ];
 
