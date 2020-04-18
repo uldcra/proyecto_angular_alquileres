@@ -29,7 +29,7 @@ export class FavoritosComponent implements OnInit {
       this.userService.getUSer(id).toPromise()
       .then( (resp: any ) => {
         console.log('resp', resp);
-        this.items = resp.myAdvertisements;
+        this.items = resp.myFavourites;
       });
     } catch (error) {
       
